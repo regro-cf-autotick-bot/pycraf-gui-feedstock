@@ -1,5 +1,5 @@
 {% set name = "pycraf-gui" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycraf-gui-{{ version }}.tar.gz
-  sha256: 1403ac72528b2f4600e89d4a1746888162cadc734490d819f2c08c6a4d1a4910
+  sha256: 5f52b9208b145d4a86cf88c21814cece65d7917831a6c6889d460bf95ad6f318
 
 build:
   entry_points:
