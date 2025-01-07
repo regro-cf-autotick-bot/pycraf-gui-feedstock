@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pycraf-gui-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pycraf-gui-{{ version }}.tar.gz
   sha256: 5f52b9208b145d4a86cf88c21814cece65d7917831a6c6889d460bf95ad6f318
 
 build:
@@ -14,17 +14,17 @@ build:
     - pycraf-gui = pycraf_gui.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
     - setuptools >=30.3.0
     - setuptools_scm >=6.2
 
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - astropy
     - numpy
     - matplotlib >=3
@@ -41,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/bwinkel/pycraf-gui
